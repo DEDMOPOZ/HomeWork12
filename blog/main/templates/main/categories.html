@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+
+<div class="container">
+    <br>
+    <div class="payload">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Category ID</th>
+                <th scope="col">Category Title</th>
+                <th scope="col">Number of Books</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+            <tr>
+                <th scope="row">{{ category.id }}</th>
+                <td>{{ category.title }}</td>
+                <td>{{ category.books.count }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
